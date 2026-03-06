@@ -25,6 +25,8 @@ color:white;
 scroll-behavior:smooth;
 }
 
+/* NAVBAR */
+
 nav{
 display:flex;
 justify-content:space-between;
@@ -33,6 +35,7 @@ padding:20px 10%;
 background:#020617;
 position:sticky;
 top:0;
+z-index:100;
 }
 
 nav h1{
@@ -48,7 +51,10 @@ list-style:none;
 nav a{
 text-decoration:none;
 color:white;
+font-size:14px;
 }
+
+/* HERO */
 
 .hero{
 height:90vh;
@@ -60,7 +66,7 @@ text-align:center;
 }
 
 .profile{
-width:150px;
+width:160px;
 border-radius:50%;
 margin-bottom:20px;
 border:4px solid #38bdf8;
@@ -69,18 +75,18 @@ animation:float 4s ease-in-out infinite;
 
 @keyframes float{
 0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
+50%{transform:translateY(-12px)}
 100%{transform:translateY(0)}
 }
 
 .typing{
-font-size:40px;
+font-size:42px;
 color:#38bdf8;
 border-right:3px solid;
 white-space:nowrap;
 overflow:hidden;
 width:0;
-animation:typing 4s steps(30,end) forwards, blink .7s infinite;
+animation:typing 4s steps(30,end) forwards, blink .8s infinite;
 }
 
 @keyframes typing{
@@ -95,10 +101,11 @@ to{width:260px}
 .hero p{
 margin-top:15px;
 color:#cbd5f5;
+max-width:600px;
 }
 
 .btn{
-margin-top:20px;
+margin-top:25px;
 padding:12px 30px;
 background:#38bdf8;
 border:none;
@@ -106,6 +113,8 @@ border-radius:6px;
 cursor:pointer;
 font-weight:bold;
 }
+
+/* SECTIONS */
 
 section{
 padding:80px 10%;
@@ -116,8 +125,10 @@ margin-bottom:30px;
 color:#38bdf8;
 }
 
+/* SKILLS */
+
 .skills{
-max-width:600px;
+max-width:700px;
 }
 
 .skill{
@@ -141,6 +152,8 @@ animation:load 2s forwards;
 from{width:0}
 }
 
+/* PROJECTS */
+
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -159,6 +172,34 @@ transform:translateY(-10px);
 box-shadow:0 10px 20px rgba(0,0,0,0.6);
 }
 
+.card h3{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+/* EXPERIENCE */
+
+.exp-card{
+background:#1e293b;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+}
+
+/* CERTIFICATIONS */
+
+.cert li{
+margin-bottom:10px;
+}
+
+/* CONTACT */
+
+.contact p{
+margin-bottom:10px;
+}
+
+/* FOOTER */
+
 footer{
 text-align:center;
 padding:20px;
@@ -173,16 +214,20 @@ background:#020617;
 
 <nav>
 
-<h1>Tharun</h1>
+<h1>Tharun B</h1>
 
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
 </nav>
+
+
+<!-- HERO -->
 
 <div class="hero">
 
@@ -190,25 +235,37 @@ background:#020617;
 
 <h2 class="typing">Tharun B</h2>
 
-<p>Electronics & Communication Engineer | Embedded Systems | Web Development</p>
+<p>
+Electronics & Communication Engineering Student passionate about Embedded Systems,
+IoT, and Web Development.
+</p>
 
-<a href="Tharun Hardware Resume.pdf" download>
+<a href="resume.pdf" download>
 <button class="btn">Download Resume</button>
 </a>
 
 </div>
+
+
+<!-- ABOUT -->
 
 <section id="about">
 
 <h2>About Me</h2>
 
 <p>
-Electronics and Communication Engineering student passionate about embedded systems,
-IoT development, and web technologies. Experienced in building intelligent systems
-using sensors, microcontrollers, and software solutions.
+I am an Electronics and Communication Engineering student at St. Joseph’s Institute of Technology.
+I enjoy building innovative systems that combine hardware and software, including IoT devices,
+sensor based automation systems, and intelligent web platforms.
+
+My experience includes working with microcontrollers, Linux environments,
+embedded programming, and full stack development.
 </p>
 
 </section>
+
+
+<!-- SKILLS -->
 
 <section id="skills">
 
@@ -232,7 +289,7 @@ Arduino / ESP32
 </div>
 
 <div class="skill">
-HTML
+HTML / Web Development
 <div class="bar"><div class="progress" style="width:75%"></div></div>
 </div>
 
@@ -245,6 +302,9 @@ Linux
 
 </section>
 
+
+<!-- PROJECTS -->
+
 <section id="projects">
 
 <h2>Projects</h2>
@@ -253,36 +313,99 @@ Linux
 
 <div class="card">
 <h3>Food Recipe Manager</h3>
-<p>Machine learning system that recommends recipes based on available ingredients.</p>
+<p>
+Machine learning based platform that recommends recipes
+based on available ingredients using Python, Flask and SQL.
+</p>
 </div>
 
 <div class="card">
 <h3>Water Management System</h3>
-<p>Sensor based irrigation system that optimizes water usage.</p>
+<p>
+IoT based irrigation monitoring system using humidity
+and temperature sensors for optimized water usage.
+</p>
 </div>
 
 <div class="card">
 <h3>Automated Drug Dispenser</h3>
-<p>Microcontroller based system that delivers medication at scheduled times.</p>
+<p>
+Embedded system using 8051 microcontroller and GSM
+module to deliver medicines at scheduled intervals.
+</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="contact">
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+<h2>Experience</h2>
+
+<div class="exp-card">
+
+<h3>Aptitude Guru Hem</h3>
+
+<p>
+Developing a coding platform website using React.js
+and reusable components while ensuring responsive design.
+</p>
+
+</div>
+
+<div class="exp-card">
+
+<h3>National Institute of Ocean Technology</h3>
+
+<p>
+Worked on marine sensor systems and underwater
+communication devices related to Matsya 6000 submersible.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section>
+
+<h2>Certifications</h2>
+
+<ul class="cert">
+
+<li>Basic Linux – NIELIT</li>
+<li>Hardware Description Language for FPGA Design – Coursera</li>
+<li>VLSI System On Chip Design – Maven Silicon</li>
+<li>Cisco Networking Basics</li>
+
+</ul>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
 
 <h2>Contact</h2>
 
 <p>Email: tharunb2004@gmail.com</p>
 <p>GitHub: github.com/Tharunbalu</p>
 <p>LinkedIn: linkedin.com/in/tharunbalu</p>
+<p>Location: Chennai, India</p>
 
 </section>
 
+
 <footer>
 
-<p>© 2026 Tharun B</p>
+<p>© 2026 Tharun B | Portfolio</p>
 
 </footer>
 
