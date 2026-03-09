@@ -198,6 +198,11 @@ transform:translateY(-6px);
 border-color:#8b5cf6;
 box-shadow:0 0 20px #8b5cf6;
 }
+  
+.skill-card i{
+margin-right:10px;
+color:#8b5cf6;
+}
 
 /* PROJECTS */
 
@@ -295,6 +300,36 @@ margin-bottom:10px;
 transform:rotateY(180deg);
 background:#111827;
 color:#cbd5f5;
+}
+
+  .github-btn{
+display:inline-block;
+margin-top:15px;
+padding:8px 15px;
+background:#8b5cf6;
+color:white;
+text-decoration:none;
+border-radius:20px;
+font-size:14px;
+transition:0.3s;
+}
+
+.github-btn:hover{
+background:#a78bfa;
+transform:scale(1.05);
+}
+  
+.tech-stack{
+margin-top:10px;
+}
+
+.tech-stack span{
+background:#111827;
+padding:5px 10px;
+border-radius:6px;
+font-size:12px;
+margin-right:5px;
+border:1px solid #8b5cf6;
 }
   
 /* EXPERIENCE */
@@ -500,25 +535,35 @@ I am passionate about solving real-world problems using technology and continuou
 
 
 <!-- SKILLS -->
-<section id="Skills" class="reveal">
+<section id="skills" class="reveal">
+
 <h2>Skills</h2>
 
 <div class="skills-container">
 
-<div class="skill-card">Python</div>
+<div class="skill-card">
+<i class="fab fa-python"></i> Python
+</div>
 
-<div class="skill-card">Embedded Systems</div>
+<div class="skill-card">
+<i class="fas fa-microchip"></i> Embedded Systems
+</div>
 
-<div class="skill-card">Arduino / ESP32</div>
+<div class="skill-card">
+<i class="fas fa-robot"></i> Arduino / ESP32
+</div>
 
-<div class="skill-card">HTML / Web Development</div>
+<div class="skill-card">
+<i class="fab fa-html5"></i> HTML / Web Development
+</div>
 
-<div class="skill-card">Linux</div>
+<div class="skill-card">
+<i class="fab fa-linux"></i> Linux
+</div>
 
 </div>
 
 </section>
-
   
 <!-- PROJECTS -->
 <section id="projects" class="reveal">
@@ -531,9 +576,19 @@ I am passionate about solving real-world problems using technology and continuou
 
 <div class="flip-card-inner">
 
-<div class="flip-card-front">
+<div class="card">
+
 <h3>Food Recipe Manager</h3>
-<p>Developed a machine learning based recipe recommendation platform that suggests recipes based on available ingredients.</p>
+
+<p>
+Machine learning platform recommending recipes
+based on ingredients using Python, Flask and SQL.
+</p>
+
+<a href="https://github.com/yourprojectlink" target="_blank" class="github-btn">
+<i class="fab fa-github"></i> View Project
+</a>
+
 </div>
 
 <div class="flip-card-back">
@@ -549,11 +604,22 @@ I am passionate about solving real-world problems using technology and continuou
 
 <div class="flip-card-inner">
 
-<div class="flip-card-front">
+<div class="card">
+
 <h3>Water Management System</h3>
-<p>Developed an IoT-based water management system using sensors and Arduino to monitor environmental conditions and optimize irrigation efficiency.</p>
+
+<p>
+IoT based irrigation monitoring system using sensors
+to optimize water usage.
+</p>
+
+<div class="tech-stack">
+<span>Arduino</span>
+<span>Sensors</span>
+<span>Embedded C</span>
 </div>
 
+</div>
 <div class="flip-card-back">
 <h3>Tech Stack</h3>
 <p>Arduino<br>Sensors<br>Embedded C</p>
