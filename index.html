@@ -249,6 +249,53 @@ transition-delay:0.4s;
 .projects.show .card:nth-child(3){
 transition-delay:0.6s;
 }
+
+  /* FLIP CARD PROJECTS */
+
+.flip-card{
+background:transparent;
+width:100%;
+height:200px;
+perspective:1000px;
+}
+
+.flip-card-inner{
+position:relative;
+width:100%;
+height:100%;
+text-align:center;
+transition:transform 0.8s;
+transform-style:preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner{
+transform:rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+background:#1e293b;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.flip-card-front h3{
+color:#8b5cf6;
+margin-bottom:10px;
+}
+
+.flip-card-back{
+transform:rotateY(180deg);
+background:#111827;
+color:#cbd5f5;
+}
   
 /* EXPERIENCE */
 
@@ -385,35 +432,63 @@ I am passionate about solving real-world problems using technology and continuou
 
   
 <!-- PROJECTS -->
-
-<section id="projects" class="reveal projects">
+<section id="projects" class="reveal">
 
 <h2>Projects</h2>
 
 <div class="projects">
 
-<div class="card">
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
 <h3>Food Recipe Manager</h3>
-<p>
-Machine learning based platform that recommends recipes
-based on available ingredients using Python, Flask and SQL.
-</p>
+<p>Machine learning based platform recommending recipes.</p>
 </div>
 
-<div class="card">
+<div class="flip-card-back">
+<h3>Tech Stack</h3>
+<p>Python<br>Flask<br>SQL<br>Machine Learning</p>
+</div>
+
+</div>
+</div>
+
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
 <h3>Water Management System</h3>
-<p>
-IoT based irrigation monitoring system using humidity
-and temperature sensors for optimized water usage.
-</p>
+<p>IoT irrigation monitoring system.</p>
 </div>
 
-<div class="card">
+<div class="flip-card-back">
+<h3>Tech Stack</h3>
+<p>Arduino<br>Sensors<br>Embedded C</p>
+</div>
+
+</div>
+</div>
+
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
 <h3>Automated Drug Dispenser</h3>
-<p>
-Embedded system using 8051 microcontroller and GSM
-module to deliver medicines at scheduled intervals.
-</p>
+<p>Embedded medicine dispensing system.</p>
+</div>
+
+<div class="flip-card-back">
+<h3>Tech Stack</h3>
+<p>8051 Microcontroller<br>Embedded C<br>GSM Module</p>
+</div>
+
+</div>
 </div>
 
 </div>
