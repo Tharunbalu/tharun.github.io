@@ -334,6 +334,69 @@ opacity:1;
 transform:translateX(0);
 }
 
+  /* TIMELINE EXPERIENCE */
+
+.timeline{
+position:relative;
+max-width:900px;
+margin:auto;
+}
+
+.timeline::after{
+content:'';
+position:absolute;
+width:4px;
+background:#8b5cf6;
+top:0;
+bottom:0;
+left:50%;
+margin-left:-2px;
+}
+
+.timeline-container{
+padding:20px 40px;
+position:relative;
+width:50%;
+}
+
+.timeline-container.left{
+left:0;
+}
+
+.timeline-container.right{
+left:50%;
+}
+
+.timeline-content{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+position:relative;
+transition:0.3s;
+}
+
+.timeline-content:hover{
+transform:scale(1.03);
+box-shadow:0 0 15px #8b5cf6;
+}
+
+/* circle */
+
+.timeline-container::after{
+content:'';
+position:absolute;
+width:20px;
+height:20px;
+right:-10px;
+background:#8b5cf6;
+border-radius:50%;
+top:25px;
+}
+
+.timeline-container.right::after{
+left:-10px;
+}
+
   
 /* CERTIFICATIONS */
 
@@ -527,28 +590,31 @@ I am passionate about solving real-world problems using technology and continuou
 
 <h2>Experience</h2>
 
-<div class="experience-container">
+<div class="timeline">
 
-<div class="exp-card">
+<div class="timeline-container left">
+<div class="timeline-content">
 <h3>Aptitude Guru Hem</h3>
 <p>
 Developing a coding platform website using React.js and reusable
 components while ensuring responsive design and improved user experience.
 </p>
 </div>
+</div>
 
-<div class="exp-card">
+<div class="timeline-container right">
+<div class="timeline-content">
 <h3>National Institute of Ocean Technology</h3>
 <p>
 Worked on marine sensor systems and underwater communication
 devices related to the Matsya 6000 submersible project.
 </p>
 </div>
+</div>
 
 </div>
 
 </section>
-
 
 <!-- CERTIFICATIONS -->
 
