@@ -306,6 +306,35 @@ margin-bottom:20px;
 border-radius:10px;
 }
 
+/* EXPERIENCE ANIMATION */
+
+.experience-container{
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+.exp-card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+opacity:0;
+transform:translateX(-80px);
+transition:all 0.8s ease;
+}
+
+/* alternate animation */
+
+.exp-card:nth-child(even){
+transform:translateX(80px);
+}
+
+.exp-card.show{
+opacity:1;
+transform:translateX(0);
+}
+
+  
 /* CERTIFICATIONS */
 
 .cert li{
@@ -494,30 +523,27 @@ I am passionate about solving real-world problems using technology and continuou
 
 
 <!-- EXPERIENCE -->
-
-<section id="Experience" class="reveal">
+<section id="experience" class="reveal">
 
 <h2>Experience</h2>
 
+<div class="experience-container">
+
 <div class="exp-card">
-
 <h3>Aptitude Guru Hem</h3>
-
 <p>
-Developing a coding platform website using React.js
-and reusable components while ensuring responsive design.
+Developing a coding platform website using React.js and reusable
+components while ensuring responsive design and improved user experience.
 </p>
-
 </div>
 
 <div class="exp-card">
-
 <h3>National Institute of Ocean Technology</h3>
-
 <p>
-Worked on marine sensor systems and underwater
-communication devices related to Matsya 6000 submersible.
+Worked on marine sensor systems and underwater communication
+devices related to the Matsya 6000 submersible project.
 </p>
+</div>
 
 </div>
 
@@ -585,6 +611,7 @@ Chennai, India
 function reveal(){
 
 let reveals = document.querySelectorAll(".reveal");
+let expCards = document.querySelectorAll(".exp-card");
 
 for(let i = 0; i < reveals.length; i++){
 
@@ -594,10 +621,19 @@ let elementVisible = 120;
 
 if(elementTop < windowHeight - elementVisible){
 reveals[i].classList.add("active");
-
-if(reveals[i].classList.contains("projects")){
-reveals[i].classList.add("show");
 }
+
+}
+
+/* experience animation */
+
+for(let i = 0; i < expCards.length; i++){
+
+let windowHeight = window.innerHeight;
+let elementTop = expCards[i].getBoundingClientRect().top;
+
+if(elementTop < windowHeight - 100){
+expCards[i].classList.add("show");
 }
 
 }
