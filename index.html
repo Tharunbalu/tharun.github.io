@@ -140,10 +140,44 @@ color:#38bdf8;
 
 .skills{
 max-width:700px;
+margin:auto;
 }
 
-.skill{
-margin-bottom:20px;
+.skill-box{
+margin-bottom:25px;
+}
+
+.skill-title{
+display:flex;
+justify-content:space-between;
+margin-bottom:8px;
+font-size:16px;
+}
+
+.skill-bar{
+width:100%;
+height:10px;
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+}
+
+.skill-fill{
+height:100%;
+border-radius:20px;
+animation:load 2s forwards;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+box-shadow:0 0 10px #38bdf8;
+}
+
+.python{width:80%;}
+.embedded{width:85%;}
+.arduino{width:85%;}
+.html{width:75%;}
+.linux{width:70%;}
+
+@keyframes load{
+from{width:0}
 }
 
 .bar{
@@ -275,36 +309,60 @@ I am passionate about solving real-world problems using technology and continuou
 
 
 <!-- SKILLS -->
-
 <section id="skills">
 
 <h2>Skills</h2>
 
 <div class="skills">
 
-<div class="skill">
-Python
-<div class="bar"><div class="progress" style="width:80%"></div></div>
+<div class="skill-box">
+<div class="skill-title">
+<span>Python</span>
+<span>80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-fill python"></div>
+</div>
 </div>
 
-<div class="skill">
-Embedded Systems
-<div class="bar"><div class="progress" style="width:85%"></div></div>
+<div class="skill-box">
+<div class="skill-title">
+<span>Embedded Systems</span>
+<span>85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-fill embedded"></div>
+</div>
 </div>
 
-<div class="skill">
-Arduino / ESP32
-<div class="bar"><div class="progress" style="width:85%"></div></div>
+<div class="skill-box">
+<div class="skill-title">
+<span>Arduino / ESP32</span>
+<span>85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-fill arduino"></div>
+</div>
 </div>
 
-<div class="skill">
-HTML / Web Development
-<div class="bar"><div class="progress" style="width:75%"></div></div>
+<div class="skill-box">
+<div class="skill-title">
+<span>HTML / Web Development</span>
+<span>75%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-fill html"></div>
+</div>
 </div>
 
-<div class="skill">
-Linux
-<div class="bar"><div class="progress" style="width:70%"></div></div>
+<div class="skill-box">
+<div class="skill-title">
+<span>Linux</span>
+<span>70%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-fill linux"></div>
+</div>
 </div>
 
 </div>
