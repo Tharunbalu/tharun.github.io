@@ -20,6 +20,30 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
+<script>
+
+function reveal(){
+
+var reveals = document.querySelectorAll(".reveal");
+
+for(var i = 0; i < reveals.length; i++){
+
+var windowHeight = window.innerHeight;
+var elementTop = reveals[i].getBoundingClientRect().top;
+var elementVisible = 120;
+
+if(elementTop < windowHeight - elementVisible){
+reveals[i].classList.add("active");
+}
+
+}
+
+}
+
+window.addEventListener("scroll", reveal);
+
+</script>
+
 body{
 background: linear-gradient(rgba(10,10,30,0.9), rgba(10,10,30,0.9)),
 url("https://images.unsplash.com/photo-1518770660439-4636190af475");
@@ -258,6 +282,18 @@ text-decoration:none;
 color:#8b5cf6;
 }
 
+/* SCROLL ANIMATION */
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:all 1s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
 
 /* FOOTER */
 
@@ -309,7 +345,7 @@ I am an Electronics and Communication Engineering student having a strong intres
 
 <!-- ABOUT -->
 
-<section id="about">
+<section id="about" class="reveal">
 
 <h2>About Me</h2>
 
@@ -325,8 +361,7 @@ I am passionate about solving real-world problems using technology and continuou
 
 
 <!-- SKILLS -->
-<section id="skills">
-
+<section id="Skills" class="reveal">
 <h2>Skills</h2>
 
 <div class="skills-container">
@@ -348,7 +383,7 @@ I am passionate about solving real-world problems using technology and continuou
   
 <!-- PROJECTS -->
 
-<section id="projects">
+<section id="Projects" class="reveal">
 
 <h2>Projects</h2>
 
@@ -385,7 +420,7 @@ module to deliver medicines at scheduled intervals.
 
 <!-- EXPERIENCE -->
 
-<section id="experience">
+<section id="Experience" class="reveal">
 
 <h2>Experience</h2>
 
@@ -434,7 +469,7 @@ communication devices related to Matsya 6000 submersible.
 
 <!-- CONTACT -->
 
-<section id="contact" class="contact">
+<section id="Contact" class="reveal">
 
 <h2>Contact</h2>
 
