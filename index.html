@@ -223,7 +223,33 @@ box-shadow:0 10px 20px rgba(0,0,0,0.6);
 color:#8b5cf6;
 margin-bottom:10px;
 }
+/* PROJECT CARD ANIMATION */
 
+.projects .card{
+opacity:0;
+transform:translateY(50px);
+transition:all 0.8s ease;
+}
+
+.projects.show .card{
+opacity:1;
+transform:translateY(0);
+}
+
+/* stagger animation */
+
+.projects.show .card:nth-child(1){
+transition-delay:0.2s;
+}
+
+.projects.show .card:nth-child(2){
+transition-delay:0.4s;
+}
+
+.projects.show .card:nth-child(3){
+transition-delay:0.6s;
+}
+  
 /* EXPERIENCE */
 
 .exp-card{
@@ -360,7 +386,7 @@ I am passionate about solving real-world problems using technology and continuou
   
 <!-- PROJECTS -->
 
-<section id="Projects" class="reveal">
+<section id="projects" class="reveal projects">
 
 <h2>Projects</h2>
 
@@ -496,6 +522,10 @@ let elementVisible = 120;
 
 if(elementTop < windowHeight - elementVisible){
 reveals[i].classList.add("active");
+
+if(reveals[i].classList.contains("projects")){
+reveals[i].classList.add("show");
+}
 }
 
 }
