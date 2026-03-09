@@ -20,29 +20,6 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-<script>
-
-function reveal(){
-
-var reveals = document.querySelectorAll(".reveal");
-
-for(var i = 0; i < reveals.length; i++){
-
-var windowHeight = window.innerHeight;
-var elementTop = reveals[i].getBoundingClientRect().top;
-var elementVisible = 120;
-
-if(elementTop < windowHeight - elementVisible){
-reveals[i].classList.add("active");
-}
-
-}
-
-}
-
-window.addEventListener("scroll", reveal);
-
-</script>
 
 body{
 background: linear-gradient(rgba(10,10,30,0.9), rgba(10,10,30,0.9)),
@@ -286,7 +263,7 @@ color:#8b5cf6;
 
 .reveal{
 opacity:0;
-transform:translateY(60px);
+transform:translateY(80px);
 transition:all 1s ease;
 }
 
@@ -505,5 +482,28 @@ Chennai, India
 </footer>
 
 </body>
+<script>
+
+function reveal(){
+
+let reveals = document.querySelectorAll(".reveal");
+
+for(let i = 0; i < reveals.length; i++){
+
+let windowHeight = window.innerHeight;
+let elementTop = reveals[i].getBoundingClientRect().top;
+let elementVisible = 120;
+
+if(elementTop < windowHeight - elementVisible){
+reveals[i].classList.add("active");
+}
+
+}
+
+}
+
+window.addEventListener("scroll", reveal);
+
+</script>
 
 </html>
