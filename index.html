@@ -215,31 +215,12 @@ margin:auto;
 align-items:stretch;
 }
 
-.card{
-background:rgba(30,41,59,0.85);
-padding:25px;
-border-radius:12px;
-text-align:center;
-transition:0.4s;
-backdrop-filter:blur(6px);
-opacity:0;
-transform:translateY(60px);
-}
-
-.card h3{
-color:#8b5cf6;
-margin-bottom:10px;
-}
-
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 0 25px rgba(139,92,246,0.6);
-}
+/* FLIP CARD */
 
 .flip-card{
 background:transparent;
 width:100%;
-height:260px;
+height:270px;
 perspective:1000px;
 }
 
@@ -267,27 +248,7 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:rgba(30,41,59,0.85);
-}
-
-.flip-card-back{
-transform:rotateY(180deg);
-background:#111827;
-}
-
-
-
-  
-position:absolute;
-width:100%;
-height:100%;
-backface-visibility:hidden;
-border-radius:12px;
-padding:25px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+text-align:center;
 background:rgba(30,41,59,0.85);
 }
 
@@ -302,7 +263,7 @@ background:#111827;
 color:#cbd5f5;
 }
 
-/* tech stack */
+/* TECH STACK */
 
 .tech-stack{
 margin-top:15px;
@@ -318,7 +279,7 @@ margin:4px;
 border:1px solid #8b5cf6;
 }
 
-/* github button */
+/* GITHUB BUTTON */
 
 .github-btn{
 display:inline-block;
@@ -571,7 +532,6 @@ I am passionate about solving real-world problems using technology and continuou
 </section>
   
 <!-- PROJECTS -->
-  
 <section id="projects" class="reveal">
 
 <h2>Projects</h2>
@@ -585,16 +545,18 @@ I am passionate about solving real-world problems using technology and continuou
 
 <div class="flip-card-front">
 
-<h3 class="project-title">Food Reciepe Manager</h3>
+<h3 class="project-title">Food Recipe Manager</h3>
 
 <p>
-Developed a machine learning based platform that recommendsrecipes based on available ingredients using Python, Flask and SQL.
+Developed a machine learning based platform that recommends recipes
+based on the ingredients available to the user using Python, Flask,
+and SQL.
 </p>
 
 <div class="tech-stack">
 <span>Python</span>
-<span>Sql</span>
 <span>Flask</span>
+<span>SQL</span>
 <span>Machine Learning</span>
 </div>
 
@@ -607,25 +569,25 @@ Developed a machine learning based platform that recommendsrecipes based on avai
 <div class="flip-card-back">
 <h3>Key Features</h3>
 <p>
-• Real-time monitoring using sensors<br>
-• Automated irrigation control<br>
-• Efficient water usage optimization<br>
-• Microcontroller based system design
+• Ingredient based recipe recommendation<br>
+• Machine learning model for prediction<br>
+• Flask based web interface<br>
+• Database storage using SQL
 </p>
 </div>
 
 </div>
 </div>
 
-      
-<!-- project 2 -->
-  
+
+<!-- Project 2 -->
+
 <div class="flip-card">
 <div class="flip-card-inner">
 
 <div class="flip-card-front">
 
-<h3 class="project-title">Water Mangement System</h3>
+<h3 class="project-title">Water Management System</h3>
 
 <p>
 Designed an IoT based irrigation monitoring system that collects
@@ -649,10 +611,10 @@ usage for agricultural applications.
 <div class="flip-card-back">
 <h3>Key Features</h3>
 <p>
-• Real-time monitoring using sensors<br>
-• Automated irrigation control<br>
-• Efficient water usage optimization<br>
-• Microcontroller based system design
+• Real-time soil moisture monitoring<br>
+• Automated irrigation control system<br>
+• Sensor based environmental data collection<br>
+• Efficient water usage optimization
 </p>
 </div>
 
@@ -693,7 +655,7 @@ take their medication on time.
 <p>
 • Automated medication scheduling<br>
 • GSM based reminder notifications<br>
-• Reliable microcontroller control<br>
+• Microcontroller based control system<br>
 • Designed to reduce missed doses
 </p>
 </div>
