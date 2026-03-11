@@ -212,9 +212,14 @@ height:240px;
 border-radius:50%;
 object-fit:cover;
 margin-bottom:30px;
-border:5px solid #8b5cf6;
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
-transition:0.4s;
+padding:6px;
+background:linear-gradient(45deg,#8b5cf6,#6366f1,#8b5cf6);
+animation:rotateBorder 6s linear infinite;
+}
+
+@keyframes rotateBorder{
+0%{background-position:0%}
+100%{background-position:360%}
 }
 
 .profile:hover{
