@@ -270,6 +270,27 @@ align-items:center;
 background:rgba(30,41,59,0.85);
 }
 
+.flip-card-back{
+transform:rotateY(180deg);
+background:#111827;
+}
+
+
+
+  
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+border-radius:12px;
+padding:25px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:rgba(30,41,59,0.85);
+}
+
 .flip-card-front h3{
 color:#8b5cf6;
 margin-bottom:10px;
@@ -568,9 +589,7 @@ I am passionate about solving real-world problems using technology and continuou
 
       <p>
       Developed a machine learning based platform that recommends
-      recipes based on the ingredients available to the user. The system
-      processes ingredient data and suggests suitable recipes through a
-      simple web interface.
+      recipes based on available ingredients using Python, Flask and SQL.
       </p>
 
       <div class="tech-stack">
@@ -587,18 +606,21 @@ I am passionate about solving real-world problems using technology and continuou
     </div>
 
     <div class="flip-card-back">
+
       <h3>Key Features</h3>
+
       <p>
-      • Ingredient-based recipe recommendation<br>
+      • Ingredient based recipe recommendation<br>
       • Machine learning prediction model<br>
-      • Simple Flask web interface
+      • Flask web interface
       </p>
+
     </div>
 
   </div>
 </div>
 
-<!-- Project 2 -->
+      
 
 <div class="flip-card">
 <div class="flip-card-inner">
