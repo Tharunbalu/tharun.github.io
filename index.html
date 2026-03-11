@@ -236,6 +236,43 @@ transform:translateY(-10px) scale(1.03);
 box-shadow:0 0 25px rgba(139,92,246,0.6);
 }
 
+.flip-card{
+background:transparent;
+width:100%;
+height:240px;
+perspective:1000px;
+}
+
+.flip-card-inner{
+position:relative;
+width:100%;
+height:100%;
+transition:transform 0.8s;
+transform-style:preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner{
+transform:rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+border-radius:12px;
+}
+
+.flip-card-back{
+transform:rotateY(180deg);
+background:#111827;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
 /* tech stack */
 
 .tech-stack{
@@ -505,6 +542,7 @@ I am passionate about solving real-world problems using technology and continuou
 </section>
   
 <!-- PROJECTS -->
+  
 <section id="projects" class="reveal">
 
 <h2>Projects</h2>
@@ -512,13 +550,10 @@ I am passionate about solving real-world problems using technology and continuou
 <div class="projects">
 
 <div class="flip-card">
-
 <div class="flip-card-inner">
 
-<div class="card">
-
+<div class="flip-card-front card">
 <h3>Food Recipe Manager</h3>
-
 <p>
 Machine learning platform recommending recipes based on ingredients
 using Python, Flask and SQL.
@@ -534,7 +569,6 @@ using Python, Flask and SQL.
 <a href="#" class="github-btn">
 <i class="fab fa-github"></i> View Project
 </a>
-
 </div>
 
 <div class="flip-card-back">
@@ -547,13 +581,10 @@ using Python, Flask and SQL.
 
 
 <div class="flip-card">
-
 <div class="flip-card-inner">
 
-<div class="card">
-
+<div class="flip-card-front card">
 <h3>Water Management System</h3>
-
 <p>
 IoT based irrigation monitoring system using sensors
 to optimize water usage.
@@ -564,10 +595,8 @@ to optimize water usage.
 <span>Sensors</span>
 <span>Embedded C</span>
 </div>
-
 </div>
 
-</div>
 <div class="flip-card-back">
 <h3>Tech Stack</h3>
 <p>Arduino<br>Sensors<br>Embedded C</p>
@@ -578,13 +607,10 @@ to optimize water usage.
 
 
 <div class="flip-card">
-
 <div class="flip-card-inner">
 
-<div class="card">
-
+<div class="flip-card-front card">
 <h3>Automated Drug Dispenser</h3>
-
 <p>
 Developed an automated drug dispensing system using
 8051 microcontroller and GSM module.
@@ -595,13 +621,19 @@ Developed an automated drug dispensing system using
 <span>Embedded C</span>
 <span>GSM</span>
 </div>
+</div>
 
+<div class="flip-card-back">
+<h3>Tech Stack</h3>
+<p>8051<br>Embedded C<br>GSM Module</p>
+</div>
+
+</div>
 </div>
 
 </div>
 
 </section>
-
 
 <!-- EXPERIENCE -->
 <section id="experience" class="reveal">
@@ -683,45 +715,25 @@ Chennai, India
 </p>
 
 </section>
-<footer>
 
-<p>© 2026 Tharun B | Portfolio</p>
 
-</footer>
-
-</body>
+  
 <footer>
 <p>© 2026 Tharun B | Portfolio</p>
 </footer>
 
 <script>
-
 function reveal(){
 
 let reveals = document.querySelectorAll(".reveal");
-let expCards = document.querySelectorAll(".exp-card");
 
 for(let i = 0; i < reveals.length; i++){
 
 let windowHeight = window.innerHeight;
 let elementTop = reveals[i].getBoundingClientRect().top;
-let elementVisible = 120;
 
-if(elementTop < windowHeight - elementVisible){
+if(elementTop < windowHeight - 120){
 reveals[i].classList.add("active");
-}
-
-}
-
-/* experience animation */
-
-for(let i = 0; i < expCards.length; i++){
-
-let windowHeight = window.innerHeight;
-let elementTop = expCards[i].getBoundingClientRect().top;
-
-if(elementTop < windowHeight - 100){
-expCards[i].classList.add("show");
 }
 
 }
@@ -729,10 +741,7 @@ expCards[i].classList.add("show");
 }
 
 window.addEventListener("scroll", reveal);
-
 </script>
 
 </body>
-</html>
-
 </html>
