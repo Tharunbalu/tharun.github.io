@@ -205,12 +205,12 @@ color:#8b5cf6;
 }
 
 /* PROJECTS */
-
+  
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
 gap:30px;
-max-width:1000px;
+max-width:1100px;
 margin:auto;
 margin-top:40px;
 }
@@ -219,19 +219,56 @@ margin-top:40px;
 background:rgba(30,41,59,0.85);
 padding:25px;
 border-radius:12px;
-transition:0.3s;
 text-align:center;
+transition:0.4s;
 backdrop-filter:blur(6px);
+opacity:0;
+transform:translateY(60px);
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 25px rgba(0,0,0,0.6);
-}
-  
 .card h3{
 color:#8b5cf6;
 margin-bottom:10px;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 25px rgba(139,92,246,0.6);
+}
+
+/* tech stack */
+
+.tech-stack{
+margin-top:15px;
+}
+
+.tech-stack span{
+display:inline-block;
+background:#111827;
+padding:6px 12px;
+border-radius:6px;
+font-size:12px;
+margin:4px;
+border:1px solid #8b5cf6;
+}
+
+/* github button */
+
+.github-btn{
+display:inline-block;
+margin-top:15px;
+padding:8px 15px;
+background:#8b5cf6;
+color:white;
+text-decoration:none;
+border-radius:20px;
+font-size:14px;
+transition:0.3s;
+}
+
+.github-btn:hover{
+background:#a78bfa;
+transform:scale(1.05);
 }
 
 /* EXPERIENCE */
@@ -483,11 +520,18 @@ I am passionate about solving real-world problems using technology and continuou
 <h3>Food Recipe Manager</h3>
 
 <p>
-Machine learning platform recommending recipes
-based on ingredients using Python, Flask and SQL.
+Machine learning platform recommending recipes based on ingredients
+using Python, Flask and SQL.
 </p>
 
-<a href="https://github.com/yourprojectlink" target="_blank" class="github-btn">
+<div class="tech-stack">
+<span>Python</span>
+<span>Flask</span>
+<span>SQL</span>
+<span>Machine Learning</span>
+</div>
+
+<a href="#" class="github-btn">
 <i class="fab fa-github"></i> View Project
 </a>
 
@@ -522,6 +566,8 @@ to optimize water usage.
 </div>
 
 </div>
+
+</div>
 <div class="flip-card-back">
 <h3>Tech Stack</h3>
 <p>Arduino<br>Sensors<br>Embedded C</p>
@@ -535,17 +581,21 @@ to optimize water usage.
 
 <div class="flip-card-inner">
 
-<div class="flip-card-front">
+<div class="card">
+
 <h3>Automated Drug Dispenser</h3>
-<p>Developed an automated drug dispensing system using an 8051 microcontroller and GSM module to ensure timely medication delivery and reduce missed doses.</p>
+
+<p>
+Developed an automated drug dispensing system using
+8051 microcontroller and GSM module.
+</p>
+
+<div class="tech-stack">
+<span>8051</span>
+<span>Embedded C</span>
+<span>GSM</span>
 </div>
 
-<div class="flip-card-back">
-<h3>Tech Stack</h3>
-<p>8051 Microcontroller<br>Embedded C<br>GSM Module</p>
-</div>
-
-</div>
 </div>
 
 </div>
@@ -640,6 +690,10 @@ Chennai, India
 </footer>
 
 </body>
+<footer>
+<p>© 2026 Tharun B | Portfolio</p>
+</footer>
+
 <script>
 
 function reveal(){
@@ -677,5 +731,8 @@ expCards[i].classList.add("show");
 window.addEventListener("scroll", reveal);
 
 </script>
+
+</body>
+</html>
 
 </html>
