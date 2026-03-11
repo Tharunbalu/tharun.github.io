@@ -401,8 +401,48 @@ left:-10px;
   
 /* CERTIFICATIONS */
 
-.cert li{
-margin-bottom:10px;
+/* CERTIFICATIONS */
+
+.cert-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1000px;
+margin:auto;
+margin-top:40px;
+}
+
+.cert-card{
+background:rgba(30,41,59,0.85);
+padding:25px;
+border-radius:12px;
+text-align:center;
+transition:0.4s;
+backdrop-filter:blur(6px);
+border:1px solid rgba(139,92,246,0.2);
+}
+
+.cert-card i{
+font-size:35px;
+color:#8b5cf6;
+margin-bottom:15px;
+}
+
+.cert-card h3{
+font-size:18px;
+margin-bottom:8px;
+}
+
+.cert-card p{
+color:#cbd5f5;
+font-size:14px;
+}
+
+/* hover animation */
+
+.cert-card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 25px rgba(139,92,246,0.6);
 }
 
 /* CONTACT */
@@ -699,22 +739,40 @@ devices related to the Matsya 6000 submersible project.
 </section>
 
 <!-- CERTIFICATIONS -->
-
-<section>
+  
+<section id="certifications" class="reveal">
 
 <h2>Certifications</h2>
 
-<ul class="cert">
+<div class="cert-container">
 
-<li>Basic Linux – NIELIT</li>
-<li>Hardware Description Language for FPGA Design – Coursera</li>
-<li>VLSI System On Chip Design – Maven Silicon</li>
-<li>Cisco Networking Basics</li>
+<div class="cert-card">
+<i class="fas fa-terminal"></i>
+<h3>Basic Linux</h3>
+<p>NIELIT</p>
+</div>
 
-</ul>
+<div class="cert-card">
+<i class="fas fa-microchip"></i>
+<h3>Hardware Description Language for FPGA</h3>
+<p>Coursera</p>
+</div>
+
+<div class="cert-card">
+<i class="fas fa-microchip"></i>
+<h3>VLSI System on Chip Design</h3>
+<p>Maven Silicon</p>
+</div>
+
+<div class="cert-card">
+<i class="fas fa-network-wired"></i>
+<h3>Cisco Networking Basics</h3>
+<p>Cisco</p>
+</div>
+
+</div>
 
 </section>
-
 
 <!-- CONTACT -->
 
