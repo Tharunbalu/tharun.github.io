@@ -211,11 +211,14 @@ width:240px;
 height:240px;
 border-radius:50%;
 object-fit:cover;
-object-position:center 20%;
 margin-bottom:30px;
 border:5px solid #8b5cf6;
-box-shadow:0 0 25px #8b5cf6, 0 0 50px #8b5cf6;
-animation:float 4s ease-in-out infinite, glow 2s infinite alternate;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+transition:0.4s;
+}
+
+.profile:hover{
+transform:scale(1.05);
 }
 
 @keyframes glow{
