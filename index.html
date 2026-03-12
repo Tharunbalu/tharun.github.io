@@ -130,71 +130,42 @@ font-size:16px;
 margin-left:20px;
 }
 
+/* Theme toggle hover effect */
+
 #themeToggle:hover{
-background:#a78bfa;
-}
-  
-.light-mode{
-background: linear-gradient(rgba(245,243,255,0.9), rgba(245,243,255,0.9)),
-url("https://images.unsplash.com/photo-1518770660439-4636190af475");
-background-size:cover;
-background-position:center;
-color:#1f2937;
+transform:scale(1.1);
+box-shadow:0 0 10px #8b5cf6;
 }
 
-/* Navbar */
+/* Light Theme */
 
-.light-mode nav{
-background: linear-gradient(90deg,#020617,#1e1b4b,#020617);
-box-shadow:0 4px 15px rgba(0,0,0,0.6);
+.light-theme{
+background:#f5f3ff;
+color:#1e1b4b;
 }
 
-/* Text */
-
-.light-mode p{
-color:#4b5563;
+.light-theme nav{
+background:#ede9fe;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
-/* Cards */
-
-.light-mode .flip-card-front,
-.light-mode .flip-card-back,
-.light-mode .skill-card,
-.light-mode .cert-card,
-.light-mode .timeline-content{
+.light-theme .card,
+.light-theme .flip-card-front,
+.light-theme .flip-card-back{
 background:#ffffff;
-color:#1f2937;
-border:1px solid #c4b5fd;
+color:#1e1b4b;
 }
 
-/* Buttons */
+.light-theme h2,
+.light-theme h3{
+color:#7c3aed;
+}
 
-.light-mode .btn{
-background:#8b5cf6;
+.light-theme .Btn{
+background:linear-gradient(135deg,#8b5cf6,#a78bfa);
 color:white;
 }
 
-.light-mode .btn:hover{
-background:#7c3aed;
-}
-
-/* Tech stack */
-
-.light-mode .tech-stack span{
-background:#ede9fe;
-border:1px solid #8b5cf6;
-color:#4c1d95;
-}
-
-/* Github button */
-
-.light-mode .github-btn{
-background:#8b5cf6;
-}
-
-.light-mode .github-btn:hover{
-background:#7c3aed;
-}
 /* HERO */
 
 .hero{
@@ -982,62 +953,93 @@ hardware communication.
 // ===========================
 // REVEAL ANIMATION
 // ===========================
-function reveal() {
+function reveal(){
 
-    let reveals = document.querySelectorAll(".reveal");
+let reveals = document.querySelectorAll(".reveal");
 
-    for (let i = 0; i < reveals.length; i++) {
+for(let i = 0; i < reveals.length; i++){
 
-        let windowHeight = window.innerHeight;
-        let elementTop = reveals[i].getBoundingClientRect().top;
+let windowHeight = window.innerHeight;
+let elementTop = reveals[i].getBoundingClientRect().top;
 
-        if (elementTop < windowHeight - 120) {
-            reveals[i].classList.add("active");
-        }
-    }
+if(elementTop < windowHeight - 120){
+reveals[i].classList.add("active");
 }
+
+}
+
+}
+
+// ===========================
+// ELEMENT REFERENCES
+// ===========================
+
+let topBtn = document.getElementById("topBtn");
+let progressBar = document.getElementById("progress-bar");
 
 // ===========================
 // SCROLL EVENTS
 // ===========================
-let topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function(){
 
-    reveal();
+reveal();
 
-    // Progress bar
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
+/* Progress bar */
 
-    document.getElementById("progress-bar").style.width = scrolled + "%";
+if(progressBar){
 
-    // Back to top button
-    if (document.documentElement.scrollTop > 300) {
-        topBtn.style.display = "block";
-    } else {
-        topBtn.style.display = "none";
-    }
+let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+let scrolled = (winScroll / height) * 100;
+
+progressBar.style.width = scrolled + "%";
+
+}
+
+/* Back to top button */
+
+if(topBtn){
+
+if(document.documentElement.scrollTop > 300){
+topBtn.style.display = "block";
+}else{
+topBtn.style.display = "none";
+}
+
+}
 
 });
 
 // ===========================
 // BACK TO TOP BUTTON
 // ===========================
-topBtn.onclick = function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+
+if(topBtn){
+topBtn.onclick = function(){
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 };
+}
 
 // ===========================
 // THEME TOGGLE
 // ===========================
-document.getElementById("themeToggle").onclick = function () {
-    document.body.classList.toggle("light-mode");
+
+let themeToggle = document.getElementById("themeToggle");
+
+if(themeToggle){
+themeToggle.onclick = function(){
+document.body.classList.toggle("light-theme");
 };
+}
+
+// Run reveal once when page loads
+reveal();
 
 </script>
 </body>
