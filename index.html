@@ -118,35 +118,69 @@ nav a:hover::after{
 width:100%;
 }
 
-  .plane-switch {
-  --dot: #ffffff;
-  --street: #1e1b4b;
-  --street-line: #a78bfa;
-  --street-line-mid: #c4b5fd;
+.plane-switch {
+  --sky-dark: #0f172a;
+  --sky-light: #fbcfe8;
 
-  --sky-1: #a78bfa;
-  --sky-2: #8b5cf6;
-
-  --light-1: rgba(255, 233, 0, 1);
-  --light-2: rgba(255, 233, 0, 0.3);
-
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  width: 80px;
+  height: 40px;
+  display: inline-block;
 }
 
-  /* 🌞 LIGHT THEME - change plane colors */
-body.light-theme .plane-switch {
-  --dot: #1e1b4b;
-  --street: #e0e7ff;
-  --street-line: #6366f1;
-  --street-line-mid: #818cf8;
-
-  --sky-1: #fbcfe8;   /* soft pink sky */
-  --sky-2: #bae6fd;   /* light blue sky */
-
-  --light-1: rgba(255, 200, 0, 1);
-  --light-2: rgba(255, 200, 0, 0.4);
+.plane-switch input {
+  display: none;
 }
+
+.switch {
+  width: 100%;
+  height: 100%;
+  background: var(--sky-dark);
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+/* ✈️ Plane */
+.plane {
+  width: 20px;
+  height: 20px;
+  background: white;
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  border-radius: 4px;
+  transition: 0.4s;
+}
+
+/* ☁️ Clouds */
+.cloud {
+  width: 20px;
+  height: 10px;
+  background: white;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  opacity: 0.6;
+}
+
+.cloud.two {
+  left: 40px;
+  width: 15px;
+}
+
+/* ✅ TOGGLE EFFECT */
+input:checked + .switch {
+  background: var(--sky-light);
+}
+
+input:checked + .switch .plane {
+  transform: translateX(40px);
+  background: #333;
+}  
+
   
 #themeToggle{
 background:#8b5cf6;
@@ -769,22 +803,13 @@ background:#020617;
 </ul>
 
 <label class="plane-switch">
+  <input type="checkbox" id="themeToggle">
 
-<input type="checkbox" id="themeToggle">
-
-<div>
-<div>
-<svg viewBox="0 0 13 13">
-<path d="M1.55989957,5.41666667 L5.51582215..." fill="currentColor"></path>
-</svg>
-</div>
-
-<span class="street-middle"></span>
-<span class="cloud"></span>
-<span class="cloud two"></span>
-
-</div>
-
+  <div class="switch">
+    <div class="plane"></div>
+    <span class="cloud"></span>
+    <span class="cloud two"></span>
+  </div>
 </label>
 </nav>
 
@@ -1196,7 +1221,6 @@ let themeToggle = document.getElementById("themeToggle");
 
 if (themeToggle) {
 
-  // Load saved theme
   if (localStorage.getItem("theme") === "light") {
     document.body.classList.add("light-theme");
     themeToggle.checked = true;
